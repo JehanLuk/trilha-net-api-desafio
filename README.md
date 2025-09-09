@@ -1,24 +1,48 @@
-# DIO - Trilha .NET - API e Entity Framework
-www.dio.me
+# 📝 Gerenciador de Tarefas API
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de API e Entity Framework, da trilha .NET da DIO.
+![.NET](https://img.shields.io/badge/.NET-9-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-## Contexto
-Você precisa construir um sistema gerenciador de tarefas, onde você poderá cadastrar uma lista de tarefas que permitirá organizar melhor a sua rotina.
+---
 
-Essa lista de tarefas precisa ter um CRUD, ou seja, deverá permitir a você obter os registros, criar, salvar e deletar esses registros.
+## 1️⃣ Descrição
 
-A sua aplicação deverá ser do tipo Web API ou MVC, fique a vontade para implementar a solução que achar mais adequado.
+Este projeto é uma **Web API em .NET 9** utilizando **Entity Framework Core** e **PostgreSQL**.  
+Permite gerenciar uma lista de tarefas com **CRUD completo**, ou seja, criar, ler, atualizar e deletar tarefas.
 
-A sua classe principal, a classe de tarefa, deve ser a seguinte:
+O projeto foi desenvolvido como desafio da **Trilha .NET da DIO**, com foco em boas práticas de API RESTful, migrations e Swagger.
+
+---
+
+## 2️⃣ Funcionalidades
+
+- Criar tarefa (POST `/Tarefa`)
+- Obter tarefa por ID (GET `/Tarefa/{id}`)
+- Obter todas as tarefas (GET `/Tarefa/ObterTodos`)
+- Obter tarefas por título (GET `/Tarefa/ObterPorTitulo?titulo=...`)
+- Obter tarefas por data (GET `/Tarefa/ObterPorData?data=YYYY-MM-DD`)
+- Obter tarefas por status (GET `/Tarefa/ObterPorStatus?status=Pendente`)
+- Atualizar tarefa (PUT `/Tarefa/{id}`)
+- Deletar tarefa (DELETE `/Tarefa/{id}`)
+
+---
+
+## 3️⃣ Schema de Tarefa
+
+```json
+{
+  "id": 0,
+  "titulo": "string",
+  "descricao": "string",
+  "data": "2022-06-08T01:31:07.056Z",
+  "status": "Pendente"
+}
+```
 
 ![Diagrama da classe Tarefa](diagrama.png)
 
-Não se esqueça de gerar a sua migration para atualização no banco de dados.
-
 ## Métodos esperados
-É esperado que você crie o seus métodos conforme a seguir:
 
 
 **Swagger**
@@ -40,19 +64,3 @@ Não se esqueça de gerar a sua migration para atualização no banco de dados.
 | GET    | /Tarefa/ObterPorData    | data      | N/A           |
 | GET    | /Tarefa/ObterPorStatus  | status    | N/A           |
 | POST   | /Tarefa                 | N/A       | Schema Tarefa |
-
-Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que exigirem
-
-```json
-{
-  "id": 0,
-  "titulo": "string",
-  "descricao": "string",
-  "data": "2022-06-08T01:31:07.056Z",
-  "status": "Pendente"
-}
-```
-
-
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
