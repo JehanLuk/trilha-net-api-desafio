@@ -1,4 +1,4 @@
-# 📝 Gerenciador de Tarefas API
+# 📝 API de Gerenciamento de Tarefas
 
 ![.NET](https://img.shields.io/badge/.NET-9-brightgreen)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
